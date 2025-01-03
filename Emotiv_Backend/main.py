@@ -14,8 +14,8 @@ trained_cmd = 'push', 'pull', 'left', 'right'
 class WelcomeScreen(QtWidgets.QMainWindow):
     def __init__(self):
         super(WelcomeScreen, self).__init__()
-        loadUi("MainWindow.ui", self)
-        with open("config.json", "r") as config_file:
+        loadUi("Emotiv_Backend\MainWindow.ui", self)
+        with open("Emotiv_Backend\config.json", "r") as config_file:
             config = json.load(config_file)
         self.settings = [config["push"], config["pull"], config["left"], config["right"]]
         print(self.settings)
