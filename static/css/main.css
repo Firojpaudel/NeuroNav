@@ -1157,6 +1157,7 @@ section,
   transition: 0.3s;
 }
 
+
 .services .service-item h3 {
   font-size: 24px;
   font-weight: 700;
@@ -1694,6 +1695,14 @@ section,
   overflow: hidden;
 }
 
+.team .team-member .member-img img {
+  width: 100%; /* Ensures the image scales to the width of the container */
+  height: 250px; /* Sets a consistent height for all images */
+  object-fit: cover; /* Ensures the image fills the container proportionally */
+  border-radius: 5px; /* Matches the border-radius of the parent */
+}
+
+
 .team .team-member .member-img:after {
   position: absolute;
   content: "";
@@ -1883,73 +1892,47 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
-.contact .info-item {
-  background: color-mix(in srgb, var(--default-color), transparent 96%);
-  padding: 30px;
+.contact.section {
+  padding: 60px 20px; /* Add padding around the contact section */
 }
 
-.contact .info-item i {
-  font-size: 38px;
-  line-height: 0;
-  color: var(--accent-color);
+.contact .spread-form {
+  padding: 20px; /* Add internal spacing for the form */
+  background-color: #f9f9f9; /* Optional: Add a light background for better visibility */
+  border-radius: 10px; /* Smooth corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
 
-.contact .info-item h3 {
-  font-size: 20px;
-  font-weight: 700;
-  margin: 20px 0 10px 0;
+.contact .spread-form .form-control {
+  margin-bottom: 15px; /* Add spacing between fields */
+  padding: 12px; /* Increase padding inside inputs */
+  font-size: 1rem; /* Slightly increase font size for readability */
 }
 
-.contact .info-item p {
-  padding: 0;
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
+.contact .spread-form textarea.form-control {
+  resize: vertical; /* Allow resizing of the textarea vertically */
 }
 
-.contact .php-email-form {
-  background: color-mix(in srgb, var(--default-color), transparent 96%);
-  padding: 30px;
-  height: 100%;
+.contact .spread-form button[type="submit"] {
+  margin-top: 20px; /* Add margin above the button */
+  padding: 10px 20px; /* Add padding to the button */
+  font-size: 1.1rem; /* Increase button font size */
+  background-color: #007bff; /* Adjust button background */
+  color: #fff; /* White text */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Smooth button edges */
+  cursor: pointer;
 }
 
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+.contact .spread-form button[type="submit"]:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
+@media (min-width: 768px) {
+  .contact .spread-form {
+    max-width: 100%; /* Prevent compression on larger screens */
+  }
 }
-
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.contact .php-email-form button[type=submit] {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 4px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
 /*--------------------------------------------------------------
 # Portfolio Details Section
 --------------------------------------------------------------*/

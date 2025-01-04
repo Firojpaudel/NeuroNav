@@ -66,19 +66,21 @@
     #header {
       background-color: #f7f8fa; /* Set to light grey for a modern look */
       padding: 10px 20px;
-    }
+      display: flex;
+      align-items: center;
+  }
 
-    .logo img {
-      height: 40px;
-      margin-right: 10px;
-    }
+  .logo-img {
+      margin-right: 8px;
+  }
 
-    .logo h1 {
+  h1 {
       font-size: 30px;
       color: #012970;
       margin: 0;
       font-weight: bold;
-    }
+  }
+
 
     .navmenu ul {
       display: flex;
@@ -87,7 +89,9 @@
       padding: 0;
       align-items: center;
     }
-
+    .navmenu {
+      margin-left: auto; /* Push navigation menu to the right */
+  }
     .navmenu ul li {
       margin: 0 15px;
       position: relative;
@@ -217,8 +221,9 @@
 <body class="caretaker-page">
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <img src="static/img/logoneuro.png" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; margin-right: 8px;" alt="Logo" class="logo-img">
-      <h1>NeuroNav - Caretaker</h1>
+      <a>
+      <img src="static/img/logoneuro.png" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; margin-right: 8px;" alt="Logo" class="logo-img"/>
+      <h4>NeuroNav - Caretaker</h4>
       </a>
       <nav id="navmenu" class="navmenu">
         <ul>
@@ -233,6 +238,7 @@
       </nav>
     </div>
   </header>
+  
 
   <!-- Flash Messages for Caretaker -->
   {% with messages = get_flashed_messages(with_categories=true) %}
