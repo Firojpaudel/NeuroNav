@@ -1694,6 +1694,14 @@ section,
   overflow: hidden;
 }
 
+.team .team-member .member-img img {
+  width: 100%; /* Ensures the image scales to the width of the container */
+  height: 250px; /* Sets a consistent height for all images */
+  object-fit: cover; /* Ensures the image fills the container proportionally */
+  border-radius: 5px; /* Matches the border-radius of the parent */
+}
+
+
 .team .team-member .member-img:after {
   position: absolute;
   content: "";
