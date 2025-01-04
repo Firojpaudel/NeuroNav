@@ -26,9 +26,8 @@
   <style>
     /* Navbar Revamp */
     #header {
-      background-color: #2c3e50;
+      background-color: #f7f8fa; /* Set to light grey for a modern look */
       padding: 10px 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .logo img {
@@ -37,8 +36,8 @@
     }
 
     .logo h1 {
-      font-size: 24px;
-      color: #ecf0f1;
+      font-size: 30px;
+      color: #012970;
       margin: 0;
       font-weight: bold;
     }
@@ -53,26 +52,43 @@
 
     .navmenu ul li {
       margin: 0 15px;
+      position: relative;
     }
 
     .navmenu ul li a {
-      color: #ecf0f1;
+      color: #012970;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .navmenu ul li a:hover {
-      color: #3498db;
+      color: #0b3a8b;
     }
 
-    .dropdown-menu {
-      background-color: #34495e;
+    /* Dropdown menu for Users */
+    .navmenu ul li .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: none;
+      background-color: #abb3bc;
       border: none;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
+    .navmenu ul li:hover .dropdown-menu {
+      display: block;
+    }
+
     .dropdown-menu a {
       color: #ecf0f1;
+      padding: 10px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #a0acb7;
     }
 
     /* Tiles with shadow and rounded borders */
@@ -84,9 +100,9 @@
       margin-top: 20px;
     }
 
-    .tile h2 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
+    /* Adjust background color */
+    body {
+      background-color: #e2e6f0; /* Light blue background */
     }
 
     /* Container Layout */
@@ -97,7 +113,7 @@
       padding-top: 80px; /* To make room for the fixed header */
     }
 
-    /* Adjust location and live feed sections */
+    /* Location and live feed sections */
     .location-feed-container {
       display: flex;
       justify-content: space-between;
@@ -123,57 +139,25 @@
       height: 200%;
       border-radius: 10px;
     }
-
-    /* Controller */
-    .controller {
-      background: linear-gradient(145deg, #bdc3c7, #ffffff);
-      box-shadow: 10px 10px 20px #a6a6a6, -10px -10px 20px #ffffff;
-      border-radius: 20px;
-      padding: 20px;
-      display: grid;
-      grid-template-rows: repeat(3, auto);
-      justify-items: center;
-      align-items: center;
-      gap: 20px; /* Spacing between rows */
-    }
-
-    .controller .left-right {
-      display: flex;
-      justify-content: center;
-      gap: 100px; /* Spacing between Left and Right buttons */
-    }
-
-    .controller button {
-      width: 60px;
-      height: 60px;
-      border: none;
-      border-radius: 50%;
-      background: linear-gradient(145deg, #d1d9e6, #ffffff);
-      box-shadow: 5px 5px 10px #a6a6a6, -5px -5px 10px #ffffff;
-      font-size: 20px;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .controller button:hover {
-      background: linear-gradient(145deg, #ffffff, #d1d9e6);
-    }
   </style>
 </head>
 
 <body class="index-page">
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="index.html" style="text-decoration: none; font-family: 'Nunito', sans-serif" class="logo d-flex align-items-center">
         <img src="assets/img/logoneuro.png" alt="Logo">
         <h1>NeuroNav</h1>
       </a>
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#settings"><i class="bi bi-gear-fill"></i>   Settings</a></li>
-          <li><a href="#users"><i class="bi bi-person-fill"></i>     Users</a></li>
+          <li><a href="#settings"><i class="bi bi-gear-fill"></i> Settings</a></li>
+          <li>
+            <a href="#users"><i class="bi bi-person-fill"></i> Users</a>
+            <div class="dropdown-menu">
+              <a href="#logout"><i class="bi bi-box-arrow-right"></i> Logout</a>
+            </div>
+          </li>
         </ul> 
       </nav>
     </div>
@@ -187,8 +171,7 @@
           <h2>Location</h2>
           <div>
             <p>Current location: <span id="location-info">-</span></p>
-            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=85.32665044069292%2C27.68815006505944%2C85.32916098833086%2C27.689686723616152&amp;layer=mapnik&amp;marker=27.688917158095986%2C85.32790571451187" style="border: 1px solid black">
-            </iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=27.688917&amp;mlon=85.327906#map=19/27.688918/85.327906">View Larger Map</a></small>
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=85.32665044069292%2C27.68815006505944%2C85.32916098833086%2C27.689686723616152&amp;layer=mapnik&amp;marker=27.688917158095986%2C85.32790571451187" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=27.688917&amp;mlon=85.327906#map=19/27.688918/85.327906">View Larger Map</a></small>
           </div>
         </div>
 
@@ -261,7 +244,6 @@
       });
     });
   </script>
-  
- </body>
+</body>
 
 </html>
