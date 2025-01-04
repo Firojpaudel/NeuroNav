@@ -6,7 +6,7 @@ import time
 import threading
 kb = Controller()
 
-threshold = 0.5 # Enter the threshold to activate the robot
+threshold = 0.2 # Enter the threshold to activate the robot
 
 def press_n_hold(button, duration):
         kb.press(button)
