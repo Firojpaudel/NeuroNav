@@ -6,7 +6,7 @@ import time
 import threading
 kb = Controller()
 
-threshold = 0.2 # Enter the threshold to activate the robot
+threshold = 0.4 # Enter the threshold to activate the robot
 
 def press_n_hold(button, duration):
         kb.press(button)
@@ -253,9 +253,9 @@ class LiveAdvance():
         pull_key = keys[config["pull"]]
         left_key = keys[config["left"]]
         right_key = keys[config["right"]]
-        if data['action'] == "push" and data['power'] >= threshold:
+        if data['action'] == "push" and data['power'] >= 0.1:
             press_n_hold(push_key, duration=0.1)
-        elif data['action'] == "pull" and data['power'] >= threshold:
+        elif data['action'] == "pull" and data['power'] >= 0.15:
             press_n_hold(pull_key, duration=0.1)
         elif data['action'] == "left" and data['power'] >= threshold:
             press_n_hold(left_key, duration=0.1)

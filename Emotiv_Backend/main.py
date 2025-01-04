@@ -70,7 +70,7 @@ def on_new_com_data_override(*args, **kwargs):
     print(f"Received data: {data}")  # Add this line to see the raw data
     if action and power is not None:
         print(f"Received action: {action}, Power: {power}")
-        if power >= 0.5:  # Send command to ESP32 only for significant actions
+        if power >= 0.25:  # Send command to ESP32 only for significant actions
             send_to_mqtt(action)
 
 def start_live_advance():
