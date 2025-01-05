@@ -1,10 +1,10 @@
 # NeuroNav by Team NEXT
 
 ## Team Members
-- (Nilima Mainali)[https://github.com/NIlima294]
-- (Banshaj Paudel)[https://github.com/Banshaj-Paudel/]
-- (Firoj Paudel) [https://github.com/Firojpaudel]
-- (Swastik Karki) [https://github.com/CoderSwastik]
+- [Nilima Mainali](https://github.com/NIlima294)
+- [Banshaj Paudel](https://github.com/Banshaj-Paudel/)
+- [Firoj Paudel](https://github.com/Firojpaudel)
+- [Swastik Karki](https://github.com/CoderSwastik)
 ---
 
 ## About This Repository
