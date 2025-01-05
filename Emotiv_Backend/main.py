@@ -11,7 +11,7 @@ trained_profile_name = 'Firoj'  # Replace with your trained profile name
 # MQTT Configuration
 mqtt_broker = "test.mosquitto.org"  # Replace with your MQTT broker address
 mqtt_port = 1883  # Default MQTT port
-mqtt_topic = "esp32/commands"  # Topic to send commands to ESP32
+mqtt_topic = "esp8266/commands"  # Updated topic for ESP8266
 
 # Global Variables
 mqtt_client = None
@@ -47,7 +47,7 @@ def setup_mqtt():
     mqtt_client.loop_start()
 
 def send_to_mqtt(action):
-    """Send a command to the ESP32 via MQTT"""
+    """Send a command to the ESP8266 via MQTT"""
     if not mqtt_client:
         print("MQTT client is not connected. Please establish a connection first.")
         return
@@ -62,7 +62,6 @@ def send_to_mqtt(action):
     except Exception as e:
         print(f"Error sending to MQTT: {e}")
 
-
 def on_new_com_data_override(*args, **kwargs):
     """Handle new mental command data from LiveAdvance"""
     data = kwargs.get('data')
@@ -75,7 +74,7 @@ def on_new_com_data_override(*args, **kwargs):
     print(f"Received data: {data}")  # Add this line to see the raw data
     if action and power is not None:
         print(f"Received action: {action}, Power: {power}")
-        if power >= 0.15:  # Send command to ESP32 only for significant actions
+        if power >= 0.1:  # Send command to ESP8266 only for significant actions
             send_to_mqtt(action)
 
 def start_live_advance():
@@ -91,7 +90,7 @@ def update_config(action, index):
     print(f"Updated {action} mapping to index {index}.")
 
 def send_custom_message():
-    """Send a custom message to the ESP32 via MQTT"""
+    """Send a custom message to the ESP8266 via MQTT"""
     message = input("Enter the message to send: ").strip()
     if message:
         send_to_mqtt(message)
